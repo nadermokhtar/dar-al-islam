@@ -1,16 +1,29 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="container mx-auto px-4">
-      <section className="hero min-h-[70vh] flex items-center justify-center bg-brand-blue/10">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+      <section className="hero min-h-[70vh] relative flex items-center justify-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/images/fakeMosqueImage.webp"
+            alt="Mosque Background"
+            fill
+            className="object-cover brightness-50"
+            priority
+          />
+        </div>
+        
+        {/* Content */}
+        <div className="text-center max-w-4xl mx-auto relative z-10 text-white">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
             Dar al Islam Boston
           </h1>
-          <p className="text-2xl mb-4 font-arabic">السَّلامُ عَلَيْكُمْ</p>
-          <p className="text-xl mb-8">Assalaamu 'alaikum. Peace be upon you.</p>
-          <Button asChild>
+          <p className="text-2xl mb-4 font-arabic drop-shadow-lg">السَّلامُ عَلَيْكُمْ</p>
+          <p className="text-xl mb-8 drop-shadow-lg">Assalaamu 'alaikum. Peace be upon you.</p>
+          <Button>
             <a href="#welcome">Learn More</a>
           </Button>
         </div>
