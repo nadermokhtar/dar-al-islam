@@ -33,8 +33,8 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contact Us</h4>
             <address className="not-italic text-sm text-gray-600">
-              123 Main Street<br />
-              Boston, MA 02108<br />
+              138 Tremont Street<br />
+              Boston, MA 02111<br />
               Email: info@daralislamboston.org<br />
               Phone: (555) 123-4567
             </address>
