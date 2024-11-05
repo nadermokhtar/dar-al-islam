@@ -19,7 +19,7 @@ This website serves as the digital presence for Dar al Islam Boston, providing i
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/your-username/dar-al-islam-boston.git
+git clone https://github.com/nadermokhtar/dar-al-islam.git
 cd dar-al-islam-boston
 ```
 
@@ -98,7 +98,7 @@ We welcome contributions! Here's how you can help:
 
 2. **Clone Your Fork** 📥
    ```bash
-   git clone https://github.com/your-username/dar-al-islam-boston.git
+   git clone https://github.com/<your-username>/dar-al-islam.git
    ```
 
 3. **Create a Branch** 🌿
@@ -167,4 +167,4 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
 ## 📞 Contact
 
-For questions or support, please [create an issue](https://github.com/your-username/dar-al-islam-boston/issues) or contact the maintainers.
+For questions or support, please [create an issue](https://github.com/nadermokhtar/dar-al-islam.git/issues) or contact the maintainers.
