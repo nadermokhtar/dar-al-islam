@@ -38,7 +38,7 @@ export default function DonationsPage() {
       if (!stripe) throw new Error('Stripe failed to initialize');
 
       // Confirm the payment
-      const { error } = await stripe.confirmPayment({
+      const { error: stripeError } = await stripe.confirmPayment({
         elements: undefined,
         clientSecret,
         confirmParams: {
@@ -46,8 +46,8 @@ export default function DonationsPage() {
         },
       });
 
-      if (error) {
-        throw error;
+      if (stripeError) {
+        throw stripeError;
       }
     } catch (err) {
       console.error('Error:', err);
