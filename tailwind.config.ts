@@ -23,8 +23,18 @@ const config: Config = {
       fontFamily: {
         arabic: ["var(--font-arabic)"],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '100%',
+          },
+        },
+      },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+  ],
 }
+
 export default config;

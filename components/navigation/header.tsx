@@ -3,25 +3,28 @@ import { Button } from "@/components/ui/button";
 
 export default function Header() {
   return (
-    <header className="border-b">
+    <header className="bg-white shadow-sm">
       <div className="container mx-auto px-4">
-        <nav className="flex items-center justify-between h-16">
-          <Link href="/" className="font-bold text-xl">
-            Dar al Islam Boston
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="text-xl font-bold">
+            Dar al Islam
           </Link>
           
-          <div className="hidden md:flex items-center gap-6">
-            <Link href="/about">About</Link>
-            <Link href="/services">Services</Link>
-            <Link href="/khutba-evaluation">Khutba</Link>
-            <Link href="/directions">Directions</Link>
-            <Link href="/resources">Resources</Link>
-            <Link href="/contact">Contact</Link>
+          <nav className="hidden md:flex items-center space-x-4">
+            <Link href="/about" className="text-gray-600 hover:text-gray-900">
+              About
+            </Link>
+            <Link href="/jummah-prayer" className="text-gray-600 hover:text-gray-900">
+              Jummah Prayer
+            </Link>
+            <Link href="/resources" className="text-gray-600 hover:text-gray-900">
+              Resources
+            </Link>
             <Button variant="outline" asChild>
-              <Link href="/donations">Donate</Link>
+              <Link href="/contact">Contact</Link>
             </Button>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </div>
     </header>
   );

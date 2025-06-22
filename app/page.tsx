@@ -1,9 +1,108 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Welcome to Dar al Islam Boston - Your Islamic community center for worship, education, and spiritual growth. Join us for Jummah prayers, educational programs, and community events.",
+  openGraph: {
+    title: "Dar al Islam Boston - Home",
+    description: "Your Islamic community center in Boston. Join us for Jummah prayers every Friday and connect with the Muslim community.",
+    url: "/",
+  },
+  alternates: {
+    canonical: "/",
+  }
+};
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://daralislam.org/#organization",
+        "name": "Dar al Islam Boston",
+        "alternateName": "DIB",
+        "url": "https://daralislam.org",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://daralislam.org/logo.png"
+        },
+        "sameAs": [
+          "https://facebook.com/daralislam",
+          "https://twitter.com/daralislam"
+        ]
+      },
+      {
+        "@type": "Place",
+        "@id": "https://daralislam.org/#place",
+        "name": "Dar al Islam Boston",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Main Street",
+          "addressLocality": "Boston",
+          "addressRegion": "MA",
+          "postalCode": "02108",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "42.3601",
+          "longitude": "-71.0589"
+        }
+      },
+      {
+        "@type": "ReligiousOrganization",
+        "name": "Dar al Islam Boston",
+        "description": "Islamic community center providing religious services, education, and community programs",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Main Street",
+          "addressLocality": "Boston",
+          "addressRegion": "MA",
+          "postalCode": "02108",
+          "addressCountry": "US"
+        },
+        "telephone": "+1-617-555-0100",
+        "url": "https://daralislam.org",
+        "openingHours": [
+          "Fr 12:30-14:00"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Religious Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Jummah Prayer",
+                "description": "Weekly Friday congregational prayer with sermon"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Islamic Education",
+                "description": "Educational programs and classes"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  };
+
   return (
-    <div className="container mx-auto px-4">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="container mx-auto px-4">
       <section className="hero min-h-[70vh] relative flex items-center justify-center">
         {/* Background Image */}
         <div className="absolute inset-0 -z-10">
@@ -28,11 +127,11 @@ export default function Home() {
             Assalaamu 'alaikum. Peace be upon you.
           </p>
           <div className="flex flex-col items-center gap-4">
-            <Button className="w-40">
-              <a href="#welcome">Learn More</a>
+            <Button asChild>
+              <Link href="#welcome">Learn More</Link>
             </Button>
-            <Button variant="secondary" className="w-40">
-              <a href="#jummah-prayer">Jummah Prayer Time</a>
+            <Button variant="secondary" asChild>
+              <Link href="#jummah-prayer">Jummah Prayer Time</Link>
             </Button>
           </div>
         </div>
@@ -80,5 +179,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </>
   );
 }

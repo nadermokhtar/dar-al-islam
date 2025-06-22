@@ -1,5 +1,17 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us - Dar al Islam Boston",
+  description: "Learn about Dar al-Islam of Boston, serving the Muslim community in Downtown Boston since 1999. We provide a convenient place for Friday prayers with 300-350 attendees weekly.",
+  openGraph: {
+    title: "About Dar al Islam Boston",
+    description: "Serving the Muslim community in Downtown Boston since 1999. Join us for weekly Juma prayers at Cathedral Church of St. Paul.",
+    url: "/about",
+  },
+};
 
 export default function About() {
   return (

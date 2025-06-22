@@ -1,5 +1,16 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Directions - Dar al Islam Boston",
+  description: "Find us at Cathedral Church of St. Paul, 138 Tremont Street, Boston. Get directions by subway, driving, and parking information for Friday prayers.",
+  openGraph: {
+    title: "Directions to Dar al Islam Boston",
+    description: "Located in the heart of Boston next to Park Street subway station. Easy access by public transportation or car.",
+    url: "/directions",
+  },
+};
 
 export default function Directions() {
   return (

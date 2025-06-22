@@ -1,5 +1,17 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Islamic Resources & Links - Dar al Islam Boston",
+  description: "Access Islamic resources, local mosque information, prayer time tools, and community organizations. Connect with Islamic centers throughout New England.",
+  openGraph: {
+    title: "Islamic Resources - Dar al Islam Boston",
+    description: "Comprehensive collection of Islamic resources, local mosques, and community organizations to support your Islamic journey.",
+    url: "/resources",
+  },
+};
 
 export default function Resources() {
   const resources = [
@@ -113,7 +125,7 @@ export default function Resources() {
                   {resource.description}
                 </p>
                 <Button variant="outline" className="w-full sm:w-auto" asChild>
-                  <a 
+                  <Link 
                     href={resource.url} 
                     target="_blank" 
                     rel="noopener noreferrer"
@@ -121,7 +133,7 @@ export default function Resources() {
                   >
                     Visit Website
                     <span className="text-xs">↗</span>
-                  </a>
+                  </Link>
                 </Button>
               </div>
             ))}

@@ -1,5 +1,16 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Khutba Evaluation - Dar al Islam Boston",
+  description: "Help us improve our Friday sermons by participating in our anonymous Khutba evaluation program. Your feedback helps enhance the quality of our religious services.",
+  openGraph: {
+    title: "Khutba Evaluation - Dar al Islam Boston",
+    description: "Participate in our anonymous feedback program to help improve the quality of Friday sermons. Your input matters to our community.",
+    url: "/khutba-evaluation",
+  },
+};
 
 export default function KhutbaEvaluation() {
   const ratingQuestions = [

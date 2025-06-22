@@ -1,5 +1,16 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us - Dar al Islam Boston",
+  description: "Get in touch with Dar al-Islam Boston. Send us a message, find our location at Cathedral Church of St. Paul, or learn about our prayer times.",
+  openGraph: {
+    title: "Contact Dar al Islam Boston",
+    description: "Contact us for questions about prayer times, announcements, donations, or general inquiries. We're here to help.",
+    url: "/contact",
+  },
+};
 
 export default function Contact() {
   return (

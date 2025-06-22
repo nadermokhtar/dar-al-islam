@@ -1,5 +1,16 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Join Our Mailing List - Dar al Islam Boston",
+  description: "Subscribe to receive updates about weekly Juma prayers, community events, Islamic resources, and important announcements from Dar al-Islam Boston.",
+  openGraph: {
+    title: "Mailing List - Dar al Islam Boston",
+    description: "Stay connected with our community. Get updates about prayer times, events, and Islamic resources delivered to your inbox.",
+    url: "/mailing-list",
+  },
+};
 
 export default function MailingList() {
   return (

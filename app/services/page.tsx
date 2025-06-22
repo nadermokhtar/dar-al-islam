@@ -1,5 +1,16 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Our Services - Dar al Islam Boston",
+  description: "Weekly Juma prayer services every Friday at 12:45 PM (Khutbah) and 1:15 PM (Prayer). Learn about our announcements, food services, and community offerings.",
+  openGraph: {
+    title: "Services - Dar al Islam Boston",
+    description: "Join us for weekly Juma prayers every Friday. Fixed schedule: Khutbah at 12:45 PM, Prayer at 1:15 PM. Food available after prayers.",
+    url: "/services",
+  },
+};
 
 export default function Services() {
   return (
