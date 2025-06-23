@@ -1,8 +1,14 @@
 import { loadStripe } from '@stripe/stripe-js';
+import { loadStripeMock } from './stripe-mock';
 
 // Make sure to call `loadStripe` outside of a component's render to avoid
 // recreating the `Stripe` object on every render.
 export const getStripe = () => {
+  // Use mock Stripe in demo mode
+  if (process.env.NEXT_PUBLIC_DEMO_MODE === 'true') {
+    return loadStripeMock();
+  }
+  
   const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
   return stripePromise;
 };

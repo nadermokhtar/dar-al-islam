@@ -5,11 +5,19 @@ import Header from "@/components/navigation/header";
 import Footer from "@/components/navigation/footer";
 import { Providers } from "@/components/providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ 
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  fallback: ["system-ui", "arial"]
+});
 const notoNaskhArabic = Noto_Naskh_Arabic({ 
   subsets: ["arabic"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-arabic",
+  display: "swap",
+  preload: true,
+  fallback: ["Arial Unicode MS", "Tahoma"]
 });
 
 export const metadata: Metadata = {

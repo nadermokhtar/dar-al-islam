@@ -1,9 +1,12 @@
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
+import { MockStripe } from '@/lib/stripe-mock';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2025-04-30.basil',
-});
+const stripe = process.env.NEXT_PUBLIC_DEMO_MODE === 'true' 
+  ? new MockStripe() as any
+  : new Stripe(process.env.STRIPE_SECRET_KEY!, {
+      apiVersion: '2025-04-30.basil',
+    });
 
 export async function POST(req: Request) {
   try {

@@ -57,9 +57,19 @@ export default function DonationsPage() {
     }
   };
 
+  const isDemoMode = process.env.NEXT_PUBLIC_DEMO_MODE === 'true';
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-4xl mx-auto">
+        {/* Demo Mode Banner */}
+        {isDemoMode && (
+          <div className="bg-yellow-100 border border-yellow-400 text-yellow-800 px-4 py-3 rounded-lg mb-6">
+            <p className="text-sm font-medium">
+              <strong>Demo Mode:</strong> This is a demonstration. No real payments will be processed.
+            </p>
+          </div>
+        )}
         {/* Hero Section */}
         <section className="hero min-h-[50vh] relative flex items-center justify-center mb-12">
           <div className="absolute inset-0 -z-10">
@@ -141,7 +151,9 @@ export default function DonationsPage() {
 
           {/* Security Notice */}
           <p className="text-sm text-gray-500 mt-4 text-center">
-            Your donation is secure and encrypted. We use Stripe to process all payments.
+            {isDemoMode 
+              ? 'This is a demo. Use any test card number like 4242 4242 4242 4242.'
+              : 'Your donation is secure and encrypted. We use Stripe to process all payments.'}
           </p>
         </div>
 

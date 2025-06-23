@@ -4,10 +4,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Jummah Prayer - Dar al Islam Boston",
-  description: "Join us for Jummah prayer every Friday. Khutbah at 1:00 PM, Prayer at 1:30 PM. Find prayer times, location details, and important notes.",
+  description: "Join us for Jummah prayer every Friday. Khutbah at 12:45 PM, Prayer at 1:15 PM. Find prayer times, location details, and important notes.",
   openGraph: {
     title: "Jummah Prayer Times - Dar al Islam Boston",
-    description: "Friday prayers every week. Khutbah at 1:00 PM, Prayer at 1:30 PM. All are welcome to join our congregation.",
+    description: "Friday prayers every week. Khutbah at 12:45 PM, Prayer at 1:15 PM. All are welcome to join our congregation.",
     url: "/jummah-prayer",
   },
 };
@@ -23,11 +23,11 @@ export default function JummahPrayer() {
           <div className="space-y-4">
             <div className="flex justify-between items-center">
               <span className="font-semibold">Khutbah (Sermon)</span>
-              <span>1:00 PM</span>
+              <span>12:45 PM</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="font-semibold">Jummah Prayer</span>
-              <span>1:30 PM</span>
+              <span>1:15 PM</span>
             </div>
           </div>
         </div>
@@ -35,12 +35,12 @@ export default function JummahPrayer() {
         <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
           <h2 className="text-2xl font-bold mb-4">Location</h2>
           <p className="mb-4">
-            Dar al Islam Boston<br />
-            123 Main Street<br />
-            Boston, MA 02108
+            Cathedral Church of St. Paul<br />
+            138 Tremont Street<br />
+            Boston, MA 02111
           </p>
           <Button asChild>
-            <Link href="https://maps.google.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.google.com/maps/dir/?api=1&destination=138+Tremont+Street,+Boston,+MA+02111" target="_blank" rel="noopener noreferrer">
               Get Directions
             </Link>
           </Button>
